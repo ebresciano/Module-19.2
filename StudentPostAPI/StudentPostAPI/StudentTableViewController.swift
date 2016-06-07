@@ -22,6 +22,9 @@ class StudentTableViewController: UITableViewController {
 
            }
 
+    @IBAction func addButtonTapped(sender: AnyObject) {
+        StudentController.uploadStudent("RAMBO")
+    }
    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows

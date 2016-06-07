@@ -34,5 +34,18 @@ class StudentController {
         
     }
     
-}
+    static func uploadStudent(name: String) {
+    let student = Student(name: name)
+        guard let requestURL = student.endpoint else {
+            return
+        }
+        
+        NetworkController.performRequestForURL(requestURL, httpMethod: .Put, body: student.jsonData) { (data, error) in
+            if error != nil { print("ERROR: \(error?.localizedDescription)") } else {
+                print("Success")
+                }
+        }
+    }
+    
+ }
     
